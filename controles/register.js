@@ -17,6 +17,7 @@ const register = async (req, res) => {
     res.status(201).json({
         message: "registration complited",
         email: newUser.email,
+        token: newUser.token,
     });
 };
 module.exports = register;
