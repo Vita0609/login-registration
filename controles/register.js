@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const { Conflict } = require("http-errors");
 const { secretKey } = process.env;
 const register = async (req, res) => {
-    const { email, password } = (req = body);
+    const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (user) {
         throw new Conflict("email used");
